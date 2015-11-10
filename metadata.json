@@ -4,8 +4,8 @@
   "author": "Cosmin Lehene",
   "summary": "Deploys a dockerized Marathon scheduler for Mesos",
   "license": "Apache 2.0",
-  "source": "https://git.corp.adobe.com/metal-cell/cellos-marathon",
-  "project_page": "https://git.corp.adobe.com/metal-cell/cellos-marathon",
+  "source": "https://git.corp.adobe.com/metal-cell/puppet-marathon",
+  "project_page": "https://git.corp.adobe.com/metal-cell/puppet-marathon",
   "issues_url": "jira.corp.adobe.com/browse/CELL",
   "dependencies": [
     {"name":"puppetlabs-stdlib","version_requirement":">= 1.0.0"},
