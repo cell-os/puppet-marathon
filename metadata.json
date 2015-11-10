@@ -1,6 +1,6 @@
 {
   "name": "cellos-marathon",
-  "version": "0.1.0",
+  "version": "0.1.3-adobe",
   "author": "Cosmin Lehene",
   "summary": "Deploys a dockerized Marathon scheduler for Mesos",
   "license": "Apache 2.0",
