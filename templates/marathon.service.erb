@@ -17,13 +17,13 @@ ExecStartPre=<%= @docker_path %> run --rm --privileged -v /opt/bin:/opt/bin cell
 ExecStartPre=<%= @docker_path %> pull <%= @registry %>:<%= @version %>
 ExecStart=/opt/bin/systemd-docker --cgroups name=systemd run --rm \
  --name <%= @container_id %> \
- --net=host
+ --net=host \
  -p <%= @port %>:<%= @port %> \
  -e MARATHON_MASTER=<%= @master %> \
  -e MARATHON_ZK=<%= @zk %> \
  -e MARATHON_HTTP_PORT=<%= @port %> \
  -e HOSTNAME=<%= @hostname %> \
- <%= @registry %>:<%= @version %> \
+ <%= @registry %>:<%= @version %>
 
  ExecStopPost=-<%= @docker_path %> rm -f <%= @container_id %>
 
