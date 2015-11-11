@@ -1,5 +1,5 @@
 {
-  "name": "cellos-marathon",
+  "name": "puppet-marathon",
   "version": "0.1.4-adobe-SNAPSHOT",
   "author": "Cosmin Lehene",
   "summary": "Deploys a dockerized Marathon scheduler for Mesos",
