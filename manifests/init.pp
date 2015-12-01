@@ -38,7 +38,7 @@ class marathon (
   $version               = 'latest',
   $registry              = 'mesosphere/marathon',
   $docker_path           = '/bin/docker',
-  $hostname              = $::hostname,
+  $hostname              = $::fqdn,
   
   $master                = 'zk://localhost:2181/mesos',
   $zk                    = 'zk://localhost:2181/marathon',
