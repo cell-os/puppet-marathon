@@ -1,6 +1,6 @@
 {
   "name": "puppet-marathon",
-  "version": "0.1.4-adobe-SNAPSHOT",
+  "version": "0.1.4-adobe",
   "author": "Cosmin Lehene",
   "summary": "Deploys a dockerized Marathon scheduler for Mesos",
   "license": "Apache 2.0",
