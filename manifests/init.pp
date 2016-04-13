@@ -11,6 +11,14 @@
 #    Marathon zk uri. E.g. zk://host1:port1/marathon
 #  [*port*]
 #    Port on which the HTTP endpoint should bind to
+#  [*authn_enabled*]
+#    Enable Mesos framework authentication (AuthN)
+#  [*authn_principal*]
+#    Mesos AuthN principal
+#  [*authn_secret*]
+#    Mesos AuthN secret
+#  [*role*]
+#    Mesos role to assume
 #
 # [*id*]
 #   cluster id (defaults to "marathon") 
@@ -43,6 +51,10 @@ class marathon (
   $master                = 'zk://localhost:2181/mesos',
   $zk                    = 'zk://localhost:2181/marathon',
   $port                  = 8080,
+  $authn_enabled         = 'false',
+  $authn_principal       = 'marathon-principal',
+  $authn_secret          = 'marathon-secret',
+  $role                  = 'marathon-role',
 
   $service_enable        = 'true',
   $service_ensure        = 'running',
@@ -52,10 +64,18 @@ class marathon (
 
   include docker
   Class['marathon'] <- Class['docker']
+  File {
+    mode   => '0644',
+    owner  => 'root',
+    group  => 'root',
+  }
+  file { '/etc/marathon':
+    ensure => 'directory',
+  } ->
+  file { '/etc/marathon/secret':
+    content => $authn_secret
+  } ->
   file { '/etc/systemd/system/marathon.service':
-    mode    => '0644',
-    owner   => 'root',
-    group   => 'root',
     content => template('marathon/marathon.service.erb'),
   } ->   
   exec { 'reload-marathon_docker-service':

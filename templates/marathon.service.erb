@@ -19,6 +19,12 @@ ExecStart=/opt/bin/systemd-docker --cgroups name=systemd run --rm \
  --name <%= @container_id %> \
  --net=host \
  -p <%= @port %>:<%= @port %> \
+ <% if @authn_enabled -%>
+-v /etc/marathon:/etc/marathon \
+ -e MARATHON_MESOS_AUTHENTICATION_PRINCIPAL=<%= @authn_principal %> \
+ -e MARATHON_MESOS_AUTHENTICATION_SECRET_FILE=/etc/marathon/secret \
+ -e MARATHON_MESOS_ROLE=<%= @role %> \
+ <% end -%>
  -e MARATHON_MASTER=<%= @master %> \
  -e MARATHON_ZK=<%= @zk %> \
  -e MARATHON_HTTP_PORT=<%= @port %> \
