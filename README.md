@@ -1,4 +1,4 @@
-# marathon
+# puppet-marathon
 
 #### Table of Contents
 
@@ -58,16 +58,15 @@ It should work on any systemd / docker compatible host
 
 ## Development
 
-This project is part of Adobe HSTACK project group.
+This project is part of Adobe Metal Cell project group.
 
 ### Source:
 * https://git.corp.adobe.com/metal-cell/puppet-marathon
 
 ### JIRA project
-* https://jira.corp.adobe.com/browse/HSTACK
-* Component: [**puppet-marathon**](https://jira.corp.adobe.com/browse/HSTACK/component/24914)
+* https://jira.corp.adobe.com/browse/CELL
+* Component: [**puppet-marathon**](https://jira.corp.adobe.com/browse/CELL/component/41801)
 
 ### Contributing Guide
 Check [Contributors Guide](https://git.corp.adobe.com/pages/hstack/opendev/contributing_guide.html)
 
-# cellos-marathon
