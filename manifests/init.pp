@@ -55,12 +55,19 @@ class marathon (
   $authn_principal       = 'marathon-principal',
   $authn_secret          = 'marathon-secret',
   $role                  = 'marathon-role',
+  $framework_name        = 'marathon',
+  $webui_url             = '',
 
   $service_enable        = 'true',
   $service_ensure        = 'running',
 ) {
 
   $container_id          = $id
+
+
+  if empty($webui_url) {
+    $webui_url = "http://$hostname:$port"
+  }
 
   include docker
   Class['marathon'] <- Class['docker']
